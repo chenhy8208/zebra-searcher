@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zebra-searcher</artifactId>
+        <groupId>com.hongru</groupId>
+        <version>0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>zebra-xhr</artifactId>
+    <packaging>jar</packaging>
+
+    <name>zebra-xhr</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <zebra-common.version>0.1</zebra-common.version>
+        <zebra-engine.version>0.1</zebra-engine.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.hongru</groupId>
+            <artifactId>zebra-common</artifactId>
+            <version>${zebra-common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hongru</groupId>
+            <artifactId>zebra-engine</artifactId>
+            <version>${zebra-engine.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <!--build成可执行Jar包-->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/config</directory>
+                <includes>
+                    <include>*.properties</include>
+                    <include>*.xml</include>
+                    <include>*.tld</include>
+                    <include>*.txt</include>
+                </includes>
+                <filtering>false</filtering>
+                <!--配置文件打包在Jar的外面-->
+                <targetPath>${project.build.directory}/</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.tld</include>
+                    <include>**/*.txt</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.tld</include>
+                    <include>**/*.txt</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <verbose />
+                        <!--windows用;linux用:-->
+                        <!--<bootclasspath>${java.home}\lib\rt.jar;${java.home}\lib\jce.jar</bootclasspath>-->
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <!-- 描述文件路径 -->
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.hongru.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

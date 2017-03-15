@@ -1,0 +1,61 @@
+html, body {height: 100%;}
+
+.fill {
+	min-height: 100%;
+	height: 100%;
+}
+
+.vertical-center {
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh; /* These two lines are counted as one :-)       */
+
+	display: flex;
+	align-items: center;
+}
+
+.tab-body {padding: 10px;}
+/*.panel {margin-left: 0px;}*／
+
+label[for=search_query] {font-size: 4em;}
+/*#search_query {padding: 20px 20px;}*/
+
+.siteTitle {font-size: 4em;}
+
+.advanced-search-panel {display: none;}
+.media-heading{text-decoration:underline;}
+.clearfix {clear: both;}
+.debug {border: 1px solid red;}
+font.keyword{color:red; font-weight: bold;}
+.resultTail{font-size:11px; color:darkgreen;}
+.media-body{line-height: 1.5em;}
+.relativeFont{font-size: 11px; color: darkgreen; text-decoration: none;}
+.resultIntro{font-size: 11px; color: dimgray; padding-bottom: 1em;}
+
+.page {
+	padding:5px 0;
+	display: block;
+	line-height: 16px;
+	text-align: left;
+	padding-left:20px;
+	margin:5px 0;
+}
+.page span em{ display:inline-block; padding:0 2px}
+.page span, .page a {
+	display: inline-block;
+	line-height: 16px;
+	margin: 0 5px;
+	vertical-align: middle;
+}
+.page .page_bon{ color:#aaa;}
+.page .page_bon:hover{ color:#777;}
+.page li{ display:inline;}
+.page .pagination{ display:inline; float:right;}
+.page .page_z{ float:right;}
+.page li.active  a{color:#FF0000;}
+.input-page{ margin:0 !important; width:30px; text-align:center;}
+.input-logdate{ width:120px; margin:0 !important;}
+.input-logdate1{ width:265px;}
+.input-logdate2{width:200px;}
+.text-height{ width:100px; display:inline-block;}
+.radio_padd{ height:32px;}
+.newTimeFactor_before_abs{color: #666;}

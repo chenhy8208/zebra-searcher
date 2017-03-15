@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/zebra-common/zebra-common.iml" filepath="$PROJECT_DIR$/zebra-common/zebra-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zebra-engine/zebra-engine.iml" filepath="$PROJECT_DIR$/zebra-engine/zebra-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zebra-searcher.iml" filepath="$PROJECT_DIR$/zebra-searcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zebra-web-search/zebra-web-search.iml" filepath="$PROJECT_DIR$/zebra-web-search/zebra-web-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zebra-xhr/zebra-xhr.iml" filepath="$PROJECT_DIR$/zebra-xhr/zebra-xhr.iml" />
+    </modules>
+  </component>
+</project>
